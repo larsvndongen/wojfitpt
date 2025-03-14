@@ -1,0 +1,22 @@
+.row {
+    &.search {
+        &.row1 {
+            padding: 80px 0;
+
+            .row-container {
+                .blocks-container {
+                    .block {
+                        &.title {
+                            padding-bottom: 40px;
+                        }
+
+                        &.content {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

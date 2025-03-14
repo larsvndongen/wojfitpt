@@ -1,0 +1,46 @@
+// Repeater
+.block {
+    &.button-repeater {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+// Button
+.button {
+    @include transition();
+    height: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $screen_xs2) {
+        font-size: 14px;
+        padding: 7.5px 10px;
+    }
+
+    &.white {
+        background-color: $color5;
+        color: $color4;
+        
+        &:hover {
+            background-color: darken($color5, 25%);
+        }
+    }
+
+    &.orange {
+        background-color: $color1;
+        color: $color5;
+        
+        &:hover {
+            background-color: darken($color1, 25%);
+        }
+    }
+
+    &:after {
+        content: unset;
+    }
+}

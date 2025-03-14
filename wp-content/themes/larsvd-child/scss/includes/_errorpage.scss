@@ -1,0 +1,17 @@
+.row {
+    &.error-page {
+        &.row1 {
+            padding: 80px 0;
+
+            .row-container {
+                .blocks-container {
+                    .block {
+                        &.text {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

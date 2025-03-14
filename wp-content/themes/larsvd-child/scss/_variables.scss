@@ -1,0 +1,43 @@
+// Color variables
+$color1 : #ff5454;
+$color2 : rgba(#050505, 0.9);
+$color3 : #13458B;
+$color4 : #000; // Black
+$color5 : #FFF; // White
+$color6 : #1E1E1E;
+$color7 : #D9D9D9;
+
+$box-shadow : #00000029;
+
+
+// #######################################################
+
+
+// Screenwidth variables
+$screen_design	: 1440px;
+$screen_menu	: 1240px;
+
+$screen_xxl	: 1240px;
+$screen_xl	: 1024px;
+
+$screen_l    : 896px;
+$screen_m	: 768px;
+$screen_s	: 640px;
+
+$screen_xs	: 480px;
+$screen_xs2	: 380px;
+
+$screen_xxs	: 320px;
+
+
+// #######################################################
+
+
+// Font variables
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../includes/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+$font1 : 'Montserrat-Regular';
+$font-awesome	: 'FontAwesome';

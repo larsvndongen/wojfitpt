@@ -1,0 +1,270 @@
+// Theme styling
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @include transition;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+
+    // &:not(.loaded) {
+    //     position: fixed;
+    //     overflow-y: scroll;
+    // }
+
+    // &.loaded {
+    //     position: static;
+    //     overflow-y: auto;
+    // }
+}
+
+section {
+    &.row {
+        position: relative;
+        overflow: hidden;
+
+        $padding : 120px;
+
+        &.padding-opt1 {
+            //Geen
+            padding: 0;
+        }
+
+        &.padding-opt2 {
+            //Boven
+            padding: $padding 0 0;
+        }
+
+        &.padding-opt3 {
+            //Onder
+            padding: 0 0 $padding 0;
+        }
+
+        &.padding-opt4 {
+            //Boven en Onder
+            padding: $padding 0;
+        }
+
+        @media screen and (max-width: $screen_xs) {
+            $padding : 80px;
+
+            &.padding-opt1 {
+                //Geen
+                padding: 0;
+            }
+
+            &.padding-opt2 {
+                //Boven
+                padding: $padding 0 0;
+            }
+
+            &.padding-opt3 {
+                //Onder
+                padding: 0 0 $padding 0;
+            }
+
+            &.padding-opt4 {
+                //Boven en Onder
+                padding: $padding 0;
+            }
+        }
+
+        &:has(.scrollto) {
+            position: relative;
+        }
+
+        .scrollto {
+            position: absolute;
+            width: 100%;
+            top: -120px;
+        }
+    }
+}
+
+.row-container {
+    padding: 0 2.5rem;
+
+    @media screen and (max-width: $screen_l) {
+        padding: 0 1.25rem;
+    }
+
+    &.full-height {
+        height: 100%;
+    }
+}
+
+#main-navigation {
+    .menu-hoofdmenu-container {
+        #primary-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+* {
+    @include transition();
+    font-family: $font1;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-break: break-word;
+    hyphens: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-bottom: 1em;
+
+    &:last-child {
+        margin-bottom: unset;
+    }
+}
+
+section {
+    &.row {
+        &.larsvd {
+            &.visible {
+
+                .fade-left,
+                .fade-right,
+                .fade-top,
+                .fade-bottom {
+                    opacity: 1;
+                    transform: translateX(0) translateY(0);
+                }
+            }
+
+            .fade-left,
+            .fade-right,
+            .fade-top,
+            .fade-bottom {
+                @include transition(1s);
+                opacity: 0;
+            }
+
+            .fade-left {
+                transform: translateX(-50%)
+            }
+
+            .fade-right {
+                transform: translateX(50%)
+            }
+
+            .fade-top {
+                transform: translateY(-50%)
+            }
+
+            .fade-bottom {
+                transform: translateY(50%)
+            }
+        }
+    }
+}
+
+// Swiper.js
+.swiper-slide {
+    height: auto;
+}
+
+// Plyr.js
+.plyr--full-ui input[type=range] {
+    color: $color1;
+}
+
+.plyr__control--overlaid {
+    background: rgba($color1, .8);
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+    background: $color1;
+}
+
+.plyr__control.plyr__tab-focus {
+    box-shadow: 0 0 0 5px rgba($color1, .5);
+}
+
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+    background: $color1;
+}
+
+// Google ReCaptcha v3
+.grecaptcha-badge {
+    z-index: 9999;
+}
+
+
+// #######################################################
+
+h2 {
+    font-size: clamp(24px, 5vw, 64px);
+    line-height: clamp(24px, 5vw, 64px);
+}
+
+h3 {
+    font-size: clamp(20px, 5vw, 32px);
+}
+
+h4 {
+    font-size: clamp(18px, 5vw, 24px);
+}
+
+p {
+    font-size: clamp(14px, 5vw, 16px);
+    font-weight: 400;
+}
+
+header {
+    &.sticky-menu {
+        @include transition;
+
+        &.sticky-active {
+            // background-color: $color2;
+            @include shadow;
+        }
+    }
+}
+
+body {
+    // height: 200vh;
+}
+
+a {
+    position: relative;
+
+    &:after {
+        @include transition;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 0;
+        opacity: 0;
+        background-color: $color5;
+    }
+
+    &:hover {
+        &:after {
+            opacity: 1;
+            width: 100%;
+        }
+    }
+}
