@@ -1,6 +1,8 @@
 <?php
 
 global $acf_active;
+
+$ID = wc_get_page_id('shop'); 
 $flex_content = 'acf_flexible_content';
 
 get_header();
@@ -16,9 +18,9 @@ get_header();
         <?php while (have_posts()) :
             the_post(); ?>
 
-            <?php if (have_rows($flex_content)) { ?>
+            <?php if (have_rows($flex_content, $ID)) { ?>
 
-                <?php while (have_rows($flex_content)) {
+                <?php while (have_rows($flex_content, $ID)) {
                     the_row();
 
                     $row = get_row_layout();

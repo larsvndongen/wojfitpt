@@ -1,0 +1,163 @@
+.row {
+    &.larsvd {
+        &.contactform-slider {
+            background-color: $color4;
+
+            &.has-form {
+                padding-bottom: 80px;
+            }
+
+            .row-container {
+                .bgimage {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+
+                    >img {
+                        height: 100%;   
+                        width: 100%;
+                        object-fit: cover;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $color4;
+                        opacity: 0.4;
+                        z-index: 2;
+                    }
+    
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgb(0,0,0);
+                        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(255,255,255,0) 100%);
+                        z-index: 2;
+                    }
+
+                    &.reverse {
+                        &:after {
+                            transform: scaleX(-1);
+                        }
+                    }
+                }
+
+                .blocks-container {
+                    position: relative;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 80px;
+
+                    // @media screen and (min-width: $screen_menu) {
+                    //     width: 80%;
+                    //     margin: 0 auto;
+                    // }
+
+                    &.reverse {
+                        flex-direction: row-reverse;
+                    }
+
+                    .blocks-group {
+                        &.text-group {
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            gap: 40px;
+
+                            .block {
+                                &.text {
+                                    * {
+                                        text-align: center;
+                                        color: $color5;
+                                    }
+                                }
+
+                                &.form {
+                                    width: 100%;
+
+                                    @media screen and (min-width: $screen_l) {
+                                        max-width: 75%;
+                                    }
+
+                                    .nf-form-content {
+                                        .field-wrap {
+                                            &:not(.submit-wrap){
+                                                input, textarea {
+                                                    text-align: left;
+
+                                                    &::placeholder {
+                                                        color: $color4;
+                                                    }
+                                                }
+                                            }
+
+                                            &.submit-wrap {
+                                                .nf-field-element {
+                                                    justify-content: center;
+
+                                                    input {
+                                                        &:hover {
+                                                            color: $color4;
+    
+                                                            &::placeholder {
+                                                                color: $color4;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.image-group {
+                            overflow: hidden;
+                            height: 100%;
+                            max-width: 300px;
+
+                            @media screen and (max-width: $screen_l) {
+                                display: none;
+                            }
+
+                            .swiper-wrapper {
+                                height: 100%;
+
+                                .swiper-slide {
+                                    @include transition;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+
+                                    img {
+                                        max-width: 100%;
+                                        height: 100%;
+                                    }
+
+                                    &:not(.swiper-slide-active){
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

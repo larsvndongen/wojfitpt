@@ -1,0 +1,289 @@
+.row {
+    &.larsvd {
+        &.products {
+            position: relative;
+
+            >img {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                object-fit: contain;
+                height: 400px;
+                aspect-ratio: 1/1;
+                z-index: 1;
+                
+                @media screen and (max-width: $screen_l) {
+                    display: none;
+                }
+            }
+
+            .row-container {
+                .blocks-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 70px;
+
+                    position: relative;
+                    z-index: 2;
+
+                    .blocks-group {
+                        &.text-group {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 35px;
+
+                            .block {
+                                &.text {
+                                    @media screen and (min-width: $screen_m) {
+                                        max-width: 75%;
+                                    }
+
+                                    h1,
+                                    h2,
+                                    h3,
+                                    h4,
+                                    h5,
+                                    h6 {
+                                        padding-bottom: 35px;
+
+                                        @media screen and (max-width: $screen_s) {
+                                            padding-bottom: 15px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.simple {
+                                .block {
+                                    &.text {
+                                        text-align: center;
+
+                                        @media screen and (min-width: $screen_m) {
+                                            margin: 0 auto;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.button-group {
+                            &.simple {
+                                .block {
+                                    &.button-repeater {
+                                        justify-content: center;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.product-group {
+                            &.simple {
+                                @include gridloop(300, 40, 40, auto-fit);
+                            }
+
+                            &.detailled {
+                                @include gridloop(500, 40, 40, auto-fill);
+                            }
+
+                            .product-item {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                gap: 25px;
+
+                                padding: 25px;
+                                box-sizing: border-box;
+                                background-color: $color4;
+
+                                * {
+                                    &:not(.button) {
+                                        color: $color5;
+                                    }
+                                }
+
+                                &.none, &.black {
+                                    background-color: $color6;
+
+                                    .button {
+                                        &:hover {
+                                            background-color: $color4;
+                                            color: $color5;
+                                        }
+
+                                        &.gray {
+                                            background-color: $color4;
+
+                                            &:hover {
+                                                background-color: $color5;
+                                                color: $color4;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .block {
+                                    &.info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 15px;
+
+                                        .inner-block {
+                                            &.top {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                                gap: 15px;
+
+                                                .icon {
+                                                    font-size: 40px;
+                                                    
+                                                    i {
+                                                        color: $color1;
+                                                    }
+                                                }
+
+                                                .discount {
+                                                    padding: 5px 10px;
+                                                    box-sizing: border-box;
+                                                    background-color: $color5;
+
+                                                    p {
+                                                        font-size: 16px;
+                                                        font-weight: bold;
+                                                        color: $color4;
+                                                    }
+                                                }
+                                            }
+
+                                            &.text {
+                                                @include cut-text(4);
+                                            }
+                                        }
+                                    }
+
+                                    &.detailled {
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 15px;
+
+                                        .inner-block {
+                                            p {
+                                                &:first-child {
+                                                    margin-bottom: 0;
+                                                }
+                                            }
+
+                                            &.usp {
+                                                .repeater {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    gap: 5px;
+                                                }
+                                                
+                                                article {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: 5px;
+
+                                                    &.included {
+                                                        i {
+                                                            color: $green;
+                                                        }
+                                                    }
+
+                                                    &.excluded {
+                                                        opacity: 0.5;
+
+                                                        i {
+                                                            color: $red;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            // WooCommerce Variations
+                                            &.wc {
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 15px;
+                                                padding-top: 15px;
+                                                
+                                                .variations_form {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    gap: 15px;
+
+                                                    .reset_variations {
+                                                        margin-left: 10px;
+                                                    }
+
+                                                    select, input {
+                                                        color: $color4;
+                                                        box-sizing: border-box;
+                                                        border: 0px;
+                                                        border-radius: 0px;
+
+                                                        &.qty {
+                                                            display: none;
+                                                        }
+                                                    }
+
+                                                    tr {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        gap: 5px;
+
+                                                        * {
+                                                            text-align: left;
+                                                        }
+
+                                                        td {
+                                                            display: flex;
+                                                        }
+                                                    }
+
+                                                    .single_variation_wrap {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        gap: 15px;
+
+                                                        .woocommerce-variation {
+                                                            display: none !important;
+                                                        }
+
+                                                        .single_add_to_cart_button {
+                                                            @include transition();
+                                                            height: fit-content;
+                                                            font-size: 16px;
+                                                            font-weight: bold;
+                                                            padding: 15px 20px;
+                                                            box-sizing: border-box;
+                                                            border-radius: 0px;
+                                                        
+                                                            @media screen and (max-width: $screen_s) {
+                                                                font-size: 14px;
+                                                                padding: 7.5px 10px;
+                                                            }
+                        
+                                                            // Orange
+                                                            background-color: $color1;
+                                                            color: $color5;
+                                                            
+                                                            &:hover {
+                                                                background-color: $color6;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

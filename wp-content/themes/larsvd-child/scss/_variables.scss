@@ -7,6 +7,9 @@ $color5 : #FFF; // White
 $color6 : #1E1E1E;
 $color7 : #D9D9D9;
 
+$green : #76FF73;
+$red : #FF7373;
+
 $box-shadow : #00000029;
 
 
@@ -35,9 +38,15 @@ $screen_xxs	: 320px;
 
 // Font variables
 @font-face {
-    font-family: 'Montserrat-Regular';
-    src: url('../includes/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+    font-family: 'Roboto-Regular';
+    src: url('../includes/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf');
 }
 
-$font1 : 'Montserrat-Regular';
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: url('../includes/fonts/Roboto/Roboto-Italic-VariableFont_wdth,wght.ttf');
+}
+
+$font1 : 'Roboto-Regular';
+$font2 : 'Roboto-Italic';
 $font-awesome	: 'FontAwesome';

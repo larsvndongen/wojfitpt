@@ -71,6 +71,10 @@ function larsvd_enqueue_files()
     wp_enqueue_script('plyr-script', get_template_directory_uri() . '/includes/plyr/plyr.js', array('jquery'));
     wp_enqueue_style('plyr-style', get_template_directory_uri() . '/includes/plyr/plyr.css');
 
+    // GSAP
+    wp_enqueue_script('gsap-js', get_template_directory_uri() . '/includes/gsap/gsap.min.js', array(), false, true);
+    wp_enqueue_script('gsap-st', get_template_directory_uri() . '/includes/gsap/ScrollTrigger.min.js', array('gsap-js'), false, true);
+
 
     // #######################
 

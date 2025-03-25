@@ -55,6 +55,14 @@ footer {
                                     margin-bottom: 0;
                                 }
                             }
+
+                            a {
+                                color: $color1;
+
+                                &:after {
+                                    background-color: $color1;
+                                }
+                            }
                         }
 
                         .blocks-group {

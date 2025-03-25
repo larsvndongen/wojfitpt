@@ -1,0 +1,162 @@
+.row {
+    &.larsvd {
+        &.woocommerce {
+            .row-container {
+                .blocks-container {
+                    .blocks-group {
+                        &.woocommerce-group {
+                            .woocommerce {
+                                h1,h2,h3,h4,h5,h6 {
+                                    font-size: clamp(18px, 5vw, 36px);
+                                }
+
+                                button {
+                                    &:not(.show-password-input){
+                                        @include transition();
+                                        height: fit-content;
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        padding: 15px 20px;
+                                        box-sizing: border-box;
+                                        border-radius: 0px;
+                                    
+                                        @media screen and (max-width: $screen_s) {
+                                            font-size: 14px;
+                                            padding: 7.5px 10px;
+                                        }
+    
+                                        // Orange
+                                        background-color: $color1;
+                                        color: $color5;
+                                        
+                                        &:hover {
+                                            background-color: $color6;
+                                        }
+                                    }
+                                }
+
+                                .woocommerce-info {
+                                    border-color: $color1;
+
+                                    &:before {
+                                        color: $color1;
+                                    }
+                                }
+                            }
+
+                            .block {
+                                &.my-account {
+                                    // Bestellingen
+                                    .woocommerce-orders-table__cell-order-actions {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        align-items: center;
+                                        gap: 5px;
+
+                                        a {
+                                            min-width: 115px;
+                                            text-align: center;
+                                        }
+                                    }
+
+                                    .woocommerce-customer-details {
+                                        p {
+                                            margin: 0;
+                                        }
+                                    }
+
+                                    // #######################################
+
+                                    // Adressen
+                                    .woocommerce-MyAccount-content {
+                                        header {
+                                            margin-bottom: 15px;
+
+                                            .edit {
+                                                float: unset;
+                                            }
+                                        }
+                                    }
+
+                                    // #######################################
+
+                                    // Accountgegevens
+                                    .woocommerce-EditAccountForm {
+                                        fieldset {
+                                            margin: 25px 0;
+                                        }
+                                    }
+
+                                    // #######################################
+                                }
+
+                                &.cart {
+                                    .button {
+                                        &.wc-backward {
+                                            background-color: $color6;
+                                            color: $color5;
+
+                                            &:hover {
+                                                background-color: $color1;
+                                            }
+                                        }
+                                    }
+
+                                    .product-thumbnail {
+                                        display: none;
+                                    }
+
+                                    .woocommerce-cart-form {
+                                        .actions {
+                                            .coupon {
+                                                display: flex;
+    
+                                                input {
+                                                    @media screen and (min-width: $screen_l) {
+                                                        min-width: 200px;
+                                                    }
+                                                }
+                                            }
+
+                                            button {
+                                                background-color: $color6;
+
+                                                &:hover {
+                                                    background-color: $color1;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .wc-proceed-to-checkout {
+                                        a {
+                                            margin-bottom: 0;
+                                            font-size: 16px;
+                                            padding: 15px 20px;
+                                            background-color: $color1;
+
+                                            &:hover {
+                                                background-color: $color6;
+                                            }
+
+                                            @media screen and (max-width: $screen_s) {
+                                                font-size: 14px;
+                                                padding: 7.5px 10px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.checkout {
+                                    #order_review_heading {
+                                        padding: 40px 0 15px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -43,6 +43,11 @@
                     <?php if (have_rows($header_button_repeater, 'option')) { ?>
                         <?php larsvd_button_repeater($header_button_repeater); ?>
                     <?php } ?>
+
+                    <div class="block wc-links">
+                        <a href="/winkelwagen"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="/mijn-account"><i class="fa-solid fa-user"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

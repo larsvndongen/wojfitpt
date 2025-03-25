@@ -1,0 +1,297 @@
+.row {
+    &.larsvd {
+        &.text-image-gsap {
+            position: relative;
+
+            .slide {
+                $flex_padding: 80px;
+
+                &.padding-opt1 {
+                    //Geen
+                    padding: 0;
+                }
+
+                &.padding-opt2 {
+                    //Boven
+                    padding: $flex_padding 0 0;
+                }
+
+                &.padding-opt3 {
+                    //Onder
+                    padding: 0 0 $flex_padding 0;
+                }
+
+                &.padding-opt4 {
+                    //Boven en Onder
+                    padding: $flex_padding 0;
+                }
+
+                @media screen and (max-width: $screen_menu) {
+                    &:nth-child(even) {
+                        .row-container {
+                            .blocks-container {
+                                flex-direction: row-reverse;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .responsive,
+            .gsap-container {
+                .block {
+                    &.repeater {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+
+                        &.horizontal {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            width: max-content;
+
+                            >.slide {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                flex-shrink: 0;
+                            }
+                        }
+
+                        .slide {
+                            overflow: hidden;
+                            width: 100vw;
+
+                            @media screen and (min-width: $screen_menu) {
+                                height: 100vh;
+                            }
+
+                            @media screen and (max-width: $screen_menu) {
+                                padding: 40px 0 !important;
+                            }
+
+                            .row-container {
+                                .blocks-container {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    gap: 140px;
+
+                                    @media screen and (max-width: $screen_menu) {
+                                        gap: 40px;
+                                    }
+
+                                    @media screen and (max-width: $screen_m) {
+                                        flex-direction: column;
+                                    }
+
+                                    &:after {
+                                        content: unset;
+                                    }
+
+                                    .blocks-group {
+                                        &.image-group {
+                                            position: relative;
+                                            height: 450px;
+                                            aspect-ratio: 1;
+
+                                            @media screen and (max-width: $screen_menu) {
+                                                height: 350px;
+                                            }
+
+                                            @media screen and (max-width: $screen_xs) {
+                                                height: 250px;
+                                            }
+
+                                            .block {
+                                                &.image {
+                                                    display: flex;
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 100%;
+                                                    width: 100%;
+
+                                                    img {
+                                                        height: 100%;
+                                                        width: 100%;
+                                                        object-fit: cover;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &.text-group {
+                                            .block {
+                                                @media screen and (min-width: $screen_l) {
+                                                    max-width: 75%;
+                                                }
+
+                                                &.title {
+                                                    h1, h2, h3, h4, h5, h6 {
+                                                        position: relative;
+                                                        width: fit-content;
+                                                        padding-bottom: 45px;
+                        
+                                                        &:after {
+                                                            content: '';
+                                                            position: absolute;
+                                                            bottom: 30px;
+                                                            left: 0;
+                                                            width: 50%;
+                                                            height: 2px;
+                                                            transform: translateY(50%);
+                                                            background-color: $color1;
+                                                        }
+                                                    }
+                                                }
+
+                                                &.link {
+                                                    padding-top: 25px;
+                                                    
+                                                    a {
+                                                        font-weight: bold;
+
+                                                        &:hover {
+                                                            color: $color1;
+
+                                                            &:after {
+                                                                background-color: $color1;
+                                                            }
+                                                        }
+
+                                                        &:after {
+                                                            opacity: 1;
+                                                            width: 100%;   
+                                                            background-color: $color4;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .responsive {
+                @media screen and (min-width: $screen_menu) {
+                    display: none;
+                }
+            }
+
+            .gsap-container {
+                overflow: hidden;
+
+                @media screen and (max-width: $screen_menu) {
+                    display: none;
+                }
+
+                .block {
+                    &.progress {
+                        position: absolute;
+                        bottom: 10%;
+                        left: 0;
+                        width: 100vw;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 1px;
+                            left: 0;
+                            height: 1px;
+                            width: calc((100vw - 1240px) / 2);
+                            background-color: $color1;
+                        }
+
+                        .custom-row-container {
+                            position: relative;
+                            margin: 0 auto;
+                            max-width: 1240px;
+
+                            .progress-fill {
+                                position: relative;
+                                z-index: -1;
+                                top: 1px;
+                                left: 15px;
+                                height: 1px;
+                                width: 0;
+                                background-color: $color1;
+                            }
+
+                            article {
+                                position: absolute;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+
+                                .progress-ball {
+                                    overflow: hidden;
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    transform: translateY(-50%);
+                                    height: 30px;
+                                    aspect-ratio: 1;
+                                    background-color: $color1;
+                                    border-radius: 50%;
+                                    pointer-events: all;
+
+                                    &:before {
+                                        content: '';
+                                        display: block;
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translate(0%, -50%);
+                                        margin: 0 auto;
+                                        height: 10px;
+                                        aspect-ratio: 1;
+                                        border-radius: 50%;
+                                        background-color: $color5;
+                                        z-index: 2;
+                                    }
+
+                                    &:after {
+                                        content: '';
+                                        display: block;
+                                        position: relative;
+                                        top: 50%;
+                                        transform: translate(0%, -50%);
+                                        margin: 0 auto;
+                                        height: 15px;
+                                        aspect-ratio: 1;
+                                        border-radius: 50%;
+                                        background-color: $color1;
+                                        z-index: 1;
+                                    }
+                                }
+
+                                p {
+                                    padding-top: 30px;
+                                    position: absolute;
+                                    width: max-content;
+                                }
+                            }
+                        }
+
+                        .inner-block {
+                            .progress-bar {
+                                position: relative;
+                                overflow: hidden;
+                                z-index: -2;
+                                height: 1px;
+                                width: 100%;
+                                background-color: $color7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

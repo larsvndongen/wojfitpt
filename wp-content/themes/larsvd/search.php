@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <main>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
 
     <section class='row search row1'>
 

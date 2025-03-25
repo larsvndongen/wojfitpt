@@ -8,6 +8,10 @@
         display: none;
     }
 
+    .nf-field-container {
+        margin-bottom: 10px;
+    }
+
     .nf-error {
         &.field-wrap {
             .nf-field-element {
@@ -17,7 +21,7 @@
     
                 * {
                     &:not(textarea){
-                        border-color: $color1 !important;
+                        border-color: $color6 !important;
                     }
                 }
             }
@@ -25,6 +29,12 @@
     }
 
     .field-wrap {
+        input, textarea {
+            border-radius: 0;
+            border: 1px solid $color4;
+            padding: 10px 25px 10px 15px;
+        }
+
         &.textarea-wrap {
             .nf-field-element {
                 &:after {
@@ -34,23 +44,32 @@
         }
 
         &.submit-wrap {
+            .nf-field-element {
+                display: flex;
+            }
+
             input {
                 @include transition();
-                @include shadow;
                 height: fit-content;
+                font-size: 16px;
                 font-weight: bold;
-                padding: 5px 15px;
+                margin-top: 15px;
+                padding: 15px 20px;
                 box-sizing: border-box;
-                border: 2px solid $color1;
+            
+                @media screen and (max-width: $screen_s) {
+                    font-size: 14px;
+                    padding: 7.5px 10px;
+                }
+
                 background-color: $color1;
-                border-color: $color1;
                 color: $color5;
-        
+                border: 0;
+
                 &:hover {
                     cursor: pointer;
                     background-color: $color5;
-                    border-color: $color5;
-                    color: $color1;
+                    color: $color4;
                 }
             }
         }

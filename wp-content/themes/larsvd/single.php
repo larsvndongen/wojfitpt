@@ -8,6 +8,9 @@ get_header();
 ?>
 
 <main>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
 
     <?php if ($acf_active) { ?>
         <?php while (have_posts()) :

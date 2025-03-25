@@ -1,0 +1,157 @@
+.row {
+    &.larsvd {
+        &.reviews {
+            .row-container {
+                .blocks-container {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 100px;
+
+                    &.reverse {
+                        flex-direction: row-reverse;
+
+                        .blocks-group {
+                            &.image-group {
+                                &.effect {
+                                    &:after {
+                                        transform: translateX(-15px) translateY(-15px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: $screen_xl) {
+                        flex-direction: column !important;
+                        gap: 40px;
+                    }
+
+                    .blocks-group {
+                        width: 100%;
+
+                        &:not(:only-child){
+                            width: calc(50% - 40px);
+                            
+                            @media screen and (max-width: $screen_xl) {
+                                width: 100%;
+                            }
+                        }
+
+                        &.text-group {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 30px;
+                        }
+
+                        &.post-group {
+                            position: relative;
+
+                            article {
+                                position: relative;
+                                padding: 45px;
+                                box-sizing: border-box;
+                                z-index: 1;
+
+                                display: flex;
+                                flex-direction: column;
+                                gap: 15px;
+
+                                &:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translateY(-50%) translateX(-50%);
+                                    height: calc(100% - 15px);
+                                    width: calc(100% - 15px);
+                                    @include shadow;
+                                    background-color: $color5;
+                                }
+
+                                * {
+                                    color: $color4;
+                                }
+
+                                .block {
+                                    position: relative;
+                                    z-index: 2;
+
+                                    &.person {
+                                        padding-top: 15px;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 25px;
+
+                                        @media screen and (max-width: $screen_xs) {
+                                            align-items: flex-start;
+                                            flex-direction: column-reverse;
+                                        }
+
+                                        .inner-block {
+                                            &.image {
+                                                position: relative;
+                                                height: 140px;
+                                                aspect-ratio: 1;
+
+                                                img {
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    object-fit: cover;
+                                                    border-radius: 50%;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.stars {
+                                        i {
+                                            color: #FFD43B !important;
+                                        }
+                                    };
+                                }
+                            }
+
+                            &.swiper {
+                                @media screen and (min-width: $screen_s) {
+                                    padding: 0 50px;
+                                    box-sizing: border-box;
+                                }
+
+                                .swiper-button {
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+
+                                    @media screen and (max-width: $screen_s) {
+                                        display: none;
+                                    }
+    
+                                    i {
+                                        color: $color1;
+                                        font-size: 36px;
+    
+                                        &:hover {
+                                            cursor: pointer;
+                                        }
+                                    }
+    
+                                    &.prev {
+                                        left: 0;
+                                    }
+    
+                                    &.next {
+                                        right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

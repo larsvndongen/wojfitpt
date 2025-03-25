@@ -3,8 +3,8 @@
 // Trigger-button
 $responsive_menu_trigger_button_background_color : $color1;
 $responsive_menu_trigger_button_content_color : $color5;
-$responsive_menu_trigger_button_hover_background_color : $color5; // Hover
-$responsive_menu_trigger_button_hover_content_color : $color1; // Hover
+$responsive_menu_trigger_button_hover_background_color : $color6; // Hover
+$responsive_menu_trigger_button_hover_content_color : $color5; // Hover
 
 // Responsive-Menu
 $responsive_menu_background_color : $color4;
@@ -208,7 +208,6 @@ $responsive_menu_searchform_content_color : $color5;
 
                                 padding: 10px 20px;
                                 box-sizing: border-box;
-                                border-radius: 23px;
 
                                 * {
                                     color: $responsive_menu_current_item_content_color;
@@ -252,6 +251,25 @@ $responsive_menu_searchform_content_color : $color5;
 
             @media screen and (max-width: $screen_m) {
                 display: flex;
+            }
+        }
+
+        &.wc-links {
+            * {
+                color: $color5;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+    
+                padding: 10px 20px;
+                box-sizing: border-box;
+
+                &:after {
+                    content: unset !important;
+                }
             }
         }
 
