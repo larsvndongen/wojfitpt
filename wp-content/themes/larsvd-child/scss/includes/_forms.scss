@@ -1,0 +1,80 @@
+// Theme styling
+.nf-form-cont {
+    * {
+        font-family: $font1;
+    }
+
+    .nf-form-title, .nf-field-label, .nf-form-fields-required, .nf-error-msg {
+        display: none;
+    }
+
+    .nf-field-container {
+        margin-bottom: 10px;
+    }
+
+    .nf-error {
+        &.field-wrap {
+            .nf-field-element {
+                &:after {
+                    background-color: $color1 !important;
+                }
+    
+                * {
+                    &:not(textarea){
+                        border-color: $color6 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .field-wrap {
+        input, textarea {
+            border-radius: 0;
+            border: 1px solid $color4;
+            padding: 10px 25px 10px 15px;
+        }
+
+        &.textarea-wrap {
+            .nf-field-element {
+                &:after {
+                    content: unset;
+                }
+            }
+        }
+
+        &.submit-wrap {
+            .nf-field-element {
+                display: flex;
+            }
+
+            input {
+                @include transition();
+                height: fit-content;
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 15px;
+                padding: 15px 20px;
+                box-sizing: border-box;
+            
+                @media screen and (max-width: $screen_s) {
+                    font-size: 14px;
+                    padding: 7.5px 10px;
+                }
+
+                background-color: $color1;
+                color: $color5;
+                border: 0;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color5;
+                    color: $color4;
+                }
+            }
+        }
+    }
+}
+
+
+// #######################################################

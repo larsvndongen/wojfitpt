@@ -1,0 +1,43 @@
+# larsvd
+
+# Core
+/wp-admin/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/wp-*.php
+/xmlrpc.php
+
+# Configuration
+wp-config.php
+
+# Example themes
+/wp-content/themes/twenty*/
+
+# Example plugin
+/wp-content/plugins/*
+
+# Uploads
+/wp-content/uploads/
+
+# Log files
+*.log
+
+# Ignore all folders within wp-content except themes
+/wp-content/*
+!/wp-content/themes/
+
+/.well-known
+
+# Ignore main.css
+/wp-content/themes/larsvd-child/css/main.css
+
+
+####################################################
+
+# DOMAIN

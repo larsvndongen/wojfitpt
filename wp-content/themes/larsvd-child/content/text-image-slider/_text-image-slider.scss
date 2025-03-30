@@ -1,0 +1,159 @@
+.row {
+    &.larsvd {
+        &.text-image-slider {
+            .swiper {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+
+                >ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    
+                    li {
+                        .row-container {
+                            .blocks-container {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                gap: 140px;
+
+                                @media screen and (max-width: $screen_menu) {
+                                    gap: 40px;
+                                }
+
+                                @media screen and (max-width: $screen_m) {
+                                    flex-direction: column;
+                                }
+
+                                &:after {
+                                    content: unset;
+                                }
+
+                                .blocks-group {
+                                    &.image-group {
+                                        position: relative;
+                                        height: 450px;
+                                        aspect-ratio: 1;
+
+                                        @media screen and (max-width: $screen_menu) {
+                                            height: 350px;
+                                        }
+
+                                        @media screen and (max-width: $screen_xs) {
+                                            height: 250px;
+                                        }
+
+                                        .block {
+                                            &.image {
+                                                display: flex;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                height: 100%;
+                                                width: 100%;
+
+                                                img {
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    object-fit: cover;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.text-group {
+                                        .block {
+                                            @media screen and (min-width: $screen_l) {
+                                                max-width: 75%;
+                                            }
+
+                                            &.title {
+
+                                                h1,
+                                                h2,
+                                                h3,
+                                                h4,
+                                                h5,
+                                                h6 {
+                                                    position: relative;
+                                                    width: fit-content;
+                                                    padding-bottom: 45px;
+
+                                                    &:after {
+                                                        content: '';
+                                                        position: absolute;
+                                                        bottom: 30px;
+                                                        left: 0;
+                                                        width: 50%;
+                                                        height: 2px;
+                                                        transform: translateY(50%);
+                                                        background-color: $color1;
+                                                    }
+                                                }
+                                            }
+
+                                            &.link {
+                                                padding-top: 25px;
+
+                                                a {
+                                                    font-weight: bold;
+
+                                                    &:hover {
+                                                        color: $color1;
+
+                                                        &:after {
+                                                            background-color: $color1;
+                                                        }
+                                                    }
+
+                                                    &:after {
+                                                        opacity: 1;
+                                                        width: 100%;
+                                                        background-color: $color4;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiper-pagination {
+                    position: relative;
+                    bottom: 0;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                    column-gap: 5px;
+
+                    .swiper-pagination-bullet {
+                        height: 100%;
+                        width: fit-content;
+                        border-radius: 0px;
+                        font-size: 16px;
+                        font-weight: bold;
+                        padding: 15px 20px;
+                        box-sizing: border-box;
+
+                        background-color: $color2;
+                        color: $color5;
+                        opacity: 1;
+
+                        &.swiper-pagination-bullet-active {
+                            background-color: $color1;
+                            color: $color5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

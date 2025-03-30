@@ -1,0 +1,52 @@
+@mixin transition($transition: 0.3s all ease) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin background-image() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+@mixin gridloop($minColumnWidth, $columnGap, $rowGap: $columnGap, $layout: auto-fit) {
+    --columnGap: #{$columnGap * 1px};
+    --rowGap: #{$rowGap * 1px};
+
+    display: grid;
+    grid-template-columns: repeat($layout, minmax(#{$minColumnWidth}px, 1fr));
+
+    @media screen and (max-width: #{$minColumnWidth + 70}px) {
+        grid-template-columns: 1fr;
+    }
+
+    grid-gap: var(--rowGap) var(--columnGap);
+
+    > {
+        --gap: inherit;
+        --columns: inherit;
+        min-width: 0; // Ensure flexibility
+        flex: 1 0 calc((100% - var(--columnGap) * (var(--columns) - 1)) / var(--columns));
+    }
+}
+
+@mixin shadow() {
+    box-shadow: 0px 3px 6px $box-shadow;
+    -webkit-box-shadow: 0px 3px 6px $box-shadow;
+}
+
+@mixin cut_text($lines: 3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+            line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}

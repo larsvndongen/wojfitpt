@@ -1,0 +1,221 @@
+footer {
+    @include shadow();
+
+    .row {
+        &.footer {
+            &.row1 {
+                padding: 60px 0;
+                background-color: $color2;
+
+                @media screen and (max-width: $screen_s) {
+                    padding: 30px 0;
+                }
+
+                * {
+                    color: $color5;
+                }
+
+                a {
+                    width: fit-content;
+                }
+
+                .row-container {
+                    .blocks-container {
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 60px;
+
+                        .top, .bottom {
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: space-between;
+
+                            @media screen and (max-width: $screen_s) {
+                                flex-direction: column;
+                                gap: 25px;
+                            }
+                        }
+
+                        .bottom {
+                            position: relative;
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: -30px;
+                                transform: translateY(50%);
+                                width: 100vw;
+                                height: 1px;
+                                background-color: rgba($color7, 0.7);
+                            }
+
+                            p {
+                                &:first-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            a {
+                                color: $color1;
+
+                                &:after {
+                                    background-color: $color1;
+                                }
+                            }
+                        }
+
+                        .blocks-group {
+                            max-width: 25%;
+                            width: 100%;
+
+                            @media screen and (max-width: $screen_s) {
+                                max-width: 100%;
+
+                                * {
+                                    text-align: center;
+                                }
+                            }
+
+                            @media screen and (min-width: $screen_s) {
+                                &.middle {
+                                    * {
+                                        text-align: center;
+                                    }
+                                }
+    
+                                &.right {
+                                    text-align: right;
+                                }
+                            }
+
+                            &.text-group {
+                                display: flex;
+                                flex-direction: column;
+
+                                .block {
+                                    &.repeater {
+                                        padding-top: 25px;
+
+                                        article {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 5px;
+
+                                            @media screen and (max-width: $screen_s) {
+                                                justify-content: center;
+                                            }
+
+                                            i {
+                                                color: $color1;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.social-media-group {
+                                .block {
+                                    &.title {
+                                        p {
+                                            margin-bottom: 1em;
+                                        }
+                                    }
+
+                                    &.repeater {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        flex-wrap: wrap;
+                                        gap: 15px;
+
+                                        @media screen and (min-width: $screen_s) {
+                                            justify-content: flex-end;
+                                        }
+
+                                        a {
+                                            &:after {
+                                                content: unset;
+                                            }
+
+                                            i {
+                                                @include transition;
+                                                font-size: 32px;
+
+                                                &:hover {
+                                                    color: $color1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.row2 {
+                background-color: $color5;
+                padding: 15px 0;
+
+                .row-container {
+                    .blocks-container {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .block {
+                            * {
+                                color: $color4;
+                            }
+
+                            a {
+                                &:after {
+                                    background-color: $color4;
+                                }
+                            }
+
+                            &.left {
+                                @media screen and (max-width: $screen_s) {
+                                    display: flex;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    gap: 5px;
+
+                                    span {
+                                        display: none;
+                                    }
+
+                                    a {
+                                        width: fit-content;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $screen_l) {
+    footer {
+        .row {
+            &.footer {
+                &.row2 {
+                    .row-container {
+                        .blocks-container {
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .block {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,137 @@
+.row {
+    &.larsvd {
+        &.text-image {
+            .row-container {
+                .blocks-container {
+                    display: flex;
+                    justify-content: space-between;
+
+                    &.reverse {
+                        flex-direction: row-reverse;
+
+                        .blocks-group {
+                            &.image-group {
+                                &.effect {
+                                    &:after {
+                                        transform: translateX(-15px) translateY(-15px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: $screen_l) {
+                        flex-direction: column !important;
+                        gap: 40px;
+                    }
+
+                    .blocks-group {
+                        width: 100%;
+
+                        &:not(:only-child){
+                            width: calc(50% - 40px);
+                            
+                            @media screen and (max-width: $screen_xl) {
+                                width: 100%;
+                            }
+                        }
+
+                        &.text-group {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            gap: 30px;
+
+                            padding: 40px 0;
+
+                            @media screen and (max-width: $screen_l) {
+                                padding: unset;
+                            }
+
+                            .block {
+                                &.form {
+                                    .nf-form-content {
+                                        .field-wrap {
+                                            &.submit-wrap {
+                                                input {
+                                                    &:hover {
+                                                        border-color: $color2;
+                                                        background-color: $color2;
+                                                        color: $color5;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.image-group {
+                            position: relative;
+                            min-height: 300px;
+
+                            @media screen and (max-width: $screen_l) {
+                                min-height: 400px;
+                            }
+
+                            @media screen and (max-width: $screen_s) {
+                                min-height: 250px;
+                            }
+
+                            &.top {
+                                >img {
+                                    object-position: top;
+                                }
+                            }
+
+                            &.bottom {
+                                >img {
+                                    object-position: bottom;
+                                }
+                            }
+
+                            &.image-contain {
+                                img {
+                                    object-fit: contain;
+                                }
+
+                                &.effect {
+                                    &:after {
+                                        content: unset;
+                                    }
+                                }
+                            }
+
+                            &.effect {
+                                position: relative;
+
+                                &:after {
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: -1;
+                                    background-color: $color1;
+                                    transform: translateX(15px) translateY(-15px);
+                                }
+                            }
+
+                            img {
+                                @include transition(1s);
+                                position: absolute;
+                                top: 0;
+                                left: 0%;
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

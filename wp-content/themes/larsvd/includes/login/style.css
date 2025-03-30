@@ -1,0 +1,15 @@
+.login h1 a {
+    background-image: url('assets/logo.webp');
+    background-size: contain;
+    height: 100%;
+}
+
+.login .contact {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.login .contact a {
+    text-decoration: none;
+}

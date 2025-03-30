@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /wp-admin/admin-ajax.php
+Allow: /wp-content/uploads/
+Allow: /post-sitemap.xml
+Allow: /page-sitemap.xml
+
+Disallow: /wp-admin/
+Disallow: /refer/
+
+# Paths (no clean URLs)
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.php$
+Disallow: /*?p=*&
+Disallow: /*?SID=
+
+User-agent: MSIE 10.0
+Disallow: /
+
+User-agent: CensysInspect/1.1
+Disallow: /
+
+User-agent: MJ12bot/v1.4.8
+Disallow:
+
+Sitemap: https://www.wojfitpt.nl/sitemap.xml
+Sitemap: https://www.wojfitpt.nl/sitemapeng.xml

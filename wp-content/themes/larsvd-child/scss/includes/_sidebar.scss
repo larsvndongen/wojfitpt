@@ -1,0 +1,26 @@
+aside {
+    &.sidebar {
+        position: fixed;
+        z-index: 9999;
+        bottom: 95px;
+        // transform: translateY(50%);
+        right: 0;
+        background-color: $color1;
+        padding: 15px;
+        box-sizing: border-box;
+        @include shadow();
+
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .icon {
+            a {
+                i {
+                    font-size: 25px;
+                    color: $color5;
+                }
+            }
+        }
+    }
+}

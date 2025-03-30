@@ -1,0 +1,24 @@
+// Imports
+@import 'variables';
+@import 'mixins';
+@import 'includes/style';
+@import 'includes/buttons';
+
+@import '../header-templates/header';
+@import 'includes/responsive-menu';
+@import '../footer-templates/footer';
+@import 'includes/forms';
+@import 'includes/sidebar';
+
+// Pages & rows
+@import 'includes/searchpage';
+@import 'includes/errorpage';
+
+@import '../content/slider/slider';
+@import '../content/text-image/text-image';
+@import '../content/text-image-slider/text-image-slider';
+@import '../content/products/products';
+@import '../content/text-bg-image/text-bg-image';
+@import '../content/reviews/reviews';
+@import '../content/contactform-slider/contactform-slider';
+@import '../content/woocommerce/woocommerce';

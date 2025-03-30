@@ -1,0 +1,61 @@
+// Repeater
+.block {
+    &.button-repeater {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+// Button
+.woocommerce .button, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button, .button {
+    @include transition();
+    height: fit-content;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border-radius: 0px;
+
+    @media screen and (max-width: $screen_s) {
+        font-size: 14px;
+        padding: 7.5px 10px;
+    }
+
+    &.white {
+        background-color: $color5;
+        color: $color4;
+        
+        &:hover {
+            background-color: $color6;
+            color: $color5;
+        }
+    }
+
+    &.gray {
+        background-color: $color6;
+        color: $color5;
+        
+        &:hover {
+            background-color: $color5;
+            color: $color4;
+        }
+    }
+
+    &.orange {
+        background-color: $color1;
+        color: $color5;
+        
+        &:hover {
+            background-color: $color6;
+        }
+    }
+
+    &:after {
+        content: unset;
+    }
+}
